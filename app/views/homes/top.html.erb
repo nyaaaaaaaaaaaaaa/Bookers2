@@ -1,4 +1,6 @@
 <main>
+  <%= flash[:notice] %>
+
   <script src="https://kit.fontawesome.com/ecf4eff661.js" crossorigin="anonymous"></script>
   <p id = "notice"></p>
   <div class = "container">
@@ -6,13 +8,13 @@
       <div class = "mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
         <h1>
           Welcome to
-          <i class="fa-solid fa-book"></i>
+          <i class="fas fa-book"></i>
           <strong>Bookers</strong>
           !
         </h1>
         <p>
           In
-          <i class="fa-solid fa-book"></i>
+          <i class="fas fa-book"></i>
           <strong>Bookers</strong>
           ,
         </p>
@@ -24,16 +26,10 @@
         </p>
 
         <div class = "btn-wrapper col-10 mx-auto">
-          <div class = "row">
-            <a class = "btn btn-info btn-sm btn-block mb-3 sign_in" href = "/users/sign_in">
-              Log in
-            </a>
-          </div>
-          <div class = "row">
-            <a class = "btn btn-success btn-sm btn-block sign_up" href = "/users/sign_up">
-              Sign up
-            </a>
-          </div>
+
+          <td><%= link_to "Log in", new_user_session_url, class:"btn btn-info btn-sm btn-block mb-3 sign_in" %></td>
+          <td><%= link_to "Sign up", new_user_registration_url, class:"btn btn-success btn-sm btn-block sign_up" %></td>
+
 
         </div>
 
